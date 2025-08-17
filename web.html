@@ -3,109 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Style Portfolio</title>
+  <title>My Portfolio</title>
   <style>
-    /* GitHub Dark Theme Colors */
+   
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Segoe UI", Tahoma, sans-serif;
       background-color: #0d1117;
       color: #c9d1d9;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #161b22;
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #30363d;
-    }
-
-    header h1 {
-      margin: 0;
-      color: #58a6ff;
-    }
-
-    header p {
-      margin: 5px 0 0;
-      color: #8b949e;
-    }
-
-    .container {
-      width: 80%;
-      margin: 30px auto;
-    }
-
-    .card {
-      background-color: #161b22;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-      border: 1px solid #30363d;
-    }
-
-    h2 {
-      color: #58a6ff;
-      margin-bottom: 10px;
+      line-height: 1.6;
     }
 
     a {
       color: #58a6ff;
       text-decoration: none;
+      transition: 0.3s;
     }
 
     a:hover {
       text-decoration: underline;
     }
 
+    
+    header {
+      background: #161b22;
+      text-align: center;
+      padding: 50px 20px;
+      border-bottom: 1px solid #30363d;
+    }
+
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #58a6ff;
+      margin-bottom: 15px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: #58a6ff;
+    }
+
+    header p {
+      color: #8b949e;
+      font-size: 1.1rem;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 30px auto;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+    }
+
+    .section h2 {
+      color: #58a6ff;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      background: #21262d;
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: 1px solid #30363d;
+      font-size: 0.9rem;
+    }
+
+   
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      background: #21262d;
+      border: 1px solid #30363d;
+      border-radius: 10px;
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #58a6ff;
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      color: #58a6ff;
+    }
+
+    /* === Contact === */
+    .contact p {
+      margin: 8px 0;
+    }
+
+   
     footer {
       text-align: center;
       padding: 20px;
       border-top: 1px solid #30363d;
-      margin-top: 20px;
       color: #8b949e;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+      .skills {
+        justify-content: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
+ 
   <header>
+    <img src="./image.png" alt="Profile Picture">
     <h1>RAMYASHREE S GOWDA H S</h1>
     <p>Aspiring Developer | AI & IoT Enthusiast | Open Source Contributor</p>
   </header>
 
-  <!-- Main Content -->
   <div class="container">
-    
-    <!-- About Section -->
-    <div class="card">
+
+    <div class="section">
       <h2>About Me</h2>
-      <p>Hello! I'm a developer passionate about building projects in AI, IoT, and Web Development. I enjoy contributing to open source and exploring new technologies.</p>
+      <p>
+        Hi I'm a passionate developer who loves working on AI, IoT, and web technologies. 
+        I enjoy solving real-world problems with clean and scalable code. 
+        Always learning, always building!
+      </p>
     </div>
 
-    <!-- Projects Section -->
-    <div class="card">
+    
+    <div class="section">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Python</span>
+        <span class="skill">Machine Learning</span>
+        <span class="skill">IoT</span>
+      </div>
+    </div>
+
+   
+    <div class="section">
       <h2>Projects</h2>
-      <ul>
-        <li><a href="#">🚀 Smart Agriculture Using IoT</a></li>
-        <li><a href="#">💻 Brain Tumor Detection (ML Model)</a></li>
-        <li><a href="#">🌐 Portfolio Website</a></li>
-      </ul>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Smart Agriculture Using IoT</h3>
+          <p>A system that monitors soil health, crop growth, and automates irrigation for better yield.</p>
+        </div>
+        <div class="project-card">
+          <h3> Brain Tumor Detection (ML)</h3>
+          <p>A machine learning model using CNN for tumor detection from MRI scans.</p>
+        </div>
+        <div class="project-card">
+          <h3>Portfolio Website</h3>
+          <p>This responsive GitHub-style portfolio you are viewing right now </p>
+        </div>
+      </div>
     </div>
 
-    <!-- Contact Section -->
-    <div class="card">
-      <h2>8073377455</h2>
-      <p>Email: <a href="mailto:ramyashreesgowdahs@bgsit.ac.in">ramyashreesgowdahs@bgsit.ac.in</a></p>
-      <p>GitHub: <a href="https://github.com/ramyashreesgowdahs" target="_blank">github.com/ramyashreesgowdahs</a></p>
+    
+    <div class="section contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:yourname@email.com">ramyagowda@email.com</a></p>
+      <p>GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/ramyashreesgowdahs</a></p>
       <p>LinkedIn: <a href="#" target="_blank">linkedin.com/in/ramyashreesgowdahs</a></p>
     </div>
+
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 RAMYA GOWDA | Built with ❤️ using HTML & CSS</p>
+    <p>© 2025 RAMYA GOWDA | Built with  using HTML & CSS</p>
   </footer>
 
 </body>
